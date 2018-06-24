@@ -1,0 +1,7 @@
+.nav-custom {
+  background-color: #0e437c !important;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-custom {}
+}

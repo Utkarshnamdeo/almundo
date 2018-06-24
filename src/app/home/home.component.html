@@ -1,0 +1,120 @@
+<!-- Page Content -->
+<div class="container-fluid mt-4">
+  <div class="row">
+    <!-- <div class="d-none d-sm-block my-4 col-lg-3 hotel-filters-large"> -->
+    <div class="my-4 col-lg-3 hotel-filters-large">
+      <div class="list-group">
+        <div id="accordion">
+          <div class="card mb-1">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Filturos
+                </button>
+              </h5>
+            </div>
+          </div>
+          <div class="card mb-1">
+            <div class="card-header" id="headingTwo">
+              <h5 class="filter-title mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <span>
+                    <img style="height: 20px;width:20px" src="../../assets/icons/filters/search.svg" alt="">
+                  </span>
+                  <span>Nombre de hotel</span>
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body d-flex">
+                <div class="name-search-input">
+                  <input type="text" [(ngModel)]="filters.name" class="form-control" placeholder="Ingrese el nomre del hotel">
+                </div>
+                <div class="name-search-button">
+                  <button class="name-search-btn btn btn-primary" (click)="getAllListings()">Acceptar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-1">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <span>
+                    <img style="height: 20px;width:20px" src="../../assets/icons/filters/star.svg" alt="">
+                  </span>
+                  <span>Estrellas</span>
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <div class="stars-filters">
+                  <div class="each-stars" *ngFor="let selection of stars;let i = index">
+                    <label for="star-check-box{{i}}" class="d-flex">
+                      <input id="star-check-box{{i}}" [(ngModel)]="filters.stars" (ngModelChange)="getAllListings()" name="star-input" type="radio"
+                        [checked]="selection.checked" class="form-controll" value="{{selection.value}}">
+                      <span *ngIf="selection.title">{{selection.title}}</span>
+                      <span *ngIf="!selection.title" class="d-flex">
+                        <div *ngFor="let j of selection.stars" class="star-icon-small"></div>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="d-block col-sm-12 d-sm-none p-0 hotels-filters-small">
+      <button class="btn btn-primary p-2 w-100 mobile-filter-button" type="button" data-toggle="collapse" data-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">
+        Filturos
+      </button>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+        </div>
+      </div>
+    </div> -->
+    <div class="col-lg-9">
+      <div class=" mt-4">
+        <div class="row each-card p-3 mb-4" *ngFor="let hotel of hotelsList">
+          <div class="col-lg-3 image-container">
+            <img class="card-img-top img-fluid card-image" src="../../assets/images/hotels/{{hotel.image}}" alt="">
+          </div>
+          <div class="col-lg-6 list-body-container">
+            <div class="card-body">
+              <h3 class="card-title">{{hotel.name}}</h3>
+              <span class="star-ratings d-flex">
+                <div class="each-rating" *ngFor="let i of Arr(hotel.stars).fill(1)">
+                  <div class="star-icon">
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div class="card-body amenity-icon-list d-flex">
+              <div class="each-amenity-icon" *ngFor="let amenity of hotel.amenities">
+                <img class="icon" src="../../assets/icons/amenities/{{amenity}}.svg">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 price-container p-5">
+            <div class="price-description text-align-center">Precio por noche habitacion</div>
+            <div class="hotel-price d-flex justify-content-around">
+              <div class="currency">
+                <h3>ARS</h3>
+              </div>
+              <div class="price">
+                <h1>{{hotel.price}}</h1>
+              </div>
+            </div>
+            <div class="buy-button">
+              <button class="btn see-hotel-button">Ver Hotel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

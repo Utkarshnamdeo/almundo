@@ -1,0 +1,88 @@
+.card-image {
+  height: 100%;
+}
+
+.each-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.icon-list {}
+
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+.card-title {
+  color: rgb(83, 83, 197);
+}
+
+/* .star-ratings {
+  display: flex;
+} */
+
+.star-icon {
+  width: 25px;
+  height: 25px;
+  --webkit-mask: url('../../assets/icons/filters/star.svg') no-repeat center;
+  mask: url('../../assets/icons/filters/star.svg') no-repeat center;
+  background-color: rgb(214, 185, 20);
+}
+
+.star-icon-small {
+  width: 20px;
+  height: 20px;
+  --webkit-mask: url('../../assets/icons/filters/star.svg') no-repeat center;
+  mask: url('../../assets/icons/filters/star.svg') no-repeat center;
+  background-color: rgb(214, 185, 20);
+}
+
+.price-container {
+  border-left: 1px #252525ab dashed;
+}
+
+.filters-title {
+  font-weight: bold;
+  border: none;
+  color: blue;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.filters-title img {
+  height: 20px;
+  width: 20px;
+}
+
+.mobile-filter-button {
+  border-radius: 0;
+  margin-top: -4px;
+  background: #fff;
+  color: #2f256d;
+  border-color: #fff;
+  font-size: 1.5rem;
+}
+
+.each-amenity-icon {
+  padding: 10px;
+}
+
+.price-description {
+  text-align: center;
+}
+
+.currency,
+.price {
+  align-self: center;
+  color: #e68519;
+}
+
+.buy-button {
+  width: 100%;
+}
+
+.see-hotel-button {
+  width: 100%;
+  background-color: #2f256d;
+  color: #fff;
+}

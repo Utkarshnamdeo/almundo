@@ -26,7 +26,7 @@
               </h5>
             </div>
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-              <div class="card-body d-flex">
+              <div class="card-body d-flex justify-content-around">
                 <div class="name-search-input">
                   <input type="text" [(ngModel)]="filters.name" class="form-control" placeholder="Ingrese el nomre del hotel">
                 </div>
@@ -53,7 +53,7 @@
                   <div class="each-stars" *ngFor="let selection of stars;let i = index">
                     <label for="star-check-box{{i}}" class="d-flex">
                       <input id="star-check-box{{i}}" [(ngModel)]="filters.stars" (ngModelChange)="getAllListings()" name="star-input" type="radio"
-                        [checked]="selection.checked" class="form-controll" value="{{selection.value}}">
+                        [checked]="selection.checked" class="form-controll" style="margin-top: 5px" value="{{selection.value}}">
                       <span *ngIf="selection.title">{{selection.title}}</span>
                       <span *ngIf="!selection.title" class="d-flex">
                         <div *ngFor="let j of selection.stars" class="star-icon-small"></div>
